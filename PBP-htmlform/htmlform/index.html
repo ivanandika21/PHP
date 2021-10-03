@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tugas2 Form</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="rounded">
+                <form method="post" action="post.php">
+                    <table class="styled">
+                            <tr>
+                                <div class="child-con">
+                                    <h3>Form Pendaftaran</h3>
+                                </div>
+                            </tr>
+                            <tr>
+                                <th>Nama</th>
+                                <td><input type="text" name="nama" class="tb"></td>
+                            </tr>
+                            <tr>
+                                <th>NIM</th>
+                                <td><input type="text" name="nim" class="tb"></td>
+                            </tr>
+                            <tr>
+                                <th>Alamat</th>
+                                <td><input type="text" name="alamat" class="tb"></td>
+                            </tr>
+                            <tr>
+                                <th>Jenis Kelamin</th>
+                                <td>
+                                    <div class="form-check">
+                                        <input type="radio" name="jk" value="Perempuan" id="jkP" checked="true">
+                                        <label for="jkP">Perempuan&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <input type="radio" name="jk" value="Laki-laki" id="jkL">
+                                        <label for="jkL">Laki-laki</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Pekerjaan</th>
+                                <td>
+                                    <select name="pekerjaan">
+                                        <option selected disabled hidden>Pilih salah satu</option>    
+                                        <option value="Pelajar">Pelajar</option>
+                                        <option value="Mahasiswa">Mahasiswa</option>
+                                        <option value="Pegawai">Pegawai</option>
+                                        <option value="Wiraswasta">Wiraswasta</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="not">
+                                    <div class="submit-con">
+                                        <input type="submit" class="btn" value="Submit"></input>
+                                    </div>
+                                </td>
+                            </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
