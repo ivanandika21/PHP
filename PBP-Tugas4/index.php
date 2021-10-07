@@ -48,25 +48,24 @@
                         </table>
                         <div class="submit-con">
                             <input type="submit" value="Submit"></input>
-                            <button name="clrBtn">Clearrrr</button>
+                            <button name="clrBtn">Clear</button>
                         </div>
                 </form>
             </div>
         </div>           
 
         <div class="hasil">
-            <table>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Barang</th>
-                    <th>Harga</th>
-                </tr>
-                <?php
+            <?php
                 if(isset($_POST["item"])){
                     $tampung = $_POST["item"];
                     $harga = 0;
                     $hargaakhir = 0;
-
+                    echo "<table>";
+                    echo "<tr>";
+                    echo "<th>No</th>";
+                    echo "<th>Nama Barang</th>";
+                    echo "<th>Harga</th>";
+                    echo "</tr>";
                     for ($i = 1; $i <= count($tampung); $i++){
                         if ($tampung[$i-1] == "Keyboard"){
                             $harga = 80000;
@@ -107,17 +106,15 @@
                         $hargaakhir += $harga;
                     }
                 }
-                ?>
-                <tr>
-                    <?php
-                        if(isset($hargaakhir)){
-                        echo "<td></td>";
-                        echo "<td>Total</td>";
-                        echo "<td>".$hargaakhir."</td>";
-                        }
-                    ?>
-                </tr>
-            </table>
+                echo "<tr>";
+                    if(isset($hargaakhir)){
+                    echo "<td></td>";
+                    echo "<td>Total</td>";
+                    echo "<td>".$hargaakhir."</td>";
+                    }
+                echo "</tr>";
+                echo "</table>";
+            ?>
             <?php
                 if(isset($_POST["clrBtn"])){
                     header("Refresh:1");
