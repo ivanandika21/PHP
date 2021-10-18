@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+input {
+    padding: 10px;
+    border: 2px solid rgb(53, 157, 243);
+    border-radius: 50px;
+    margin: 5px;
+}
+.btn {
+    background-color: rgb(53, 157, 243);
+    font-weight: bolder;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
