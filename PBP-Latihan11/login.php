@@ -30,7 +30,7 @@
     // }
     
     // array
-    if (($_POST["user"] != "") && ($_POST["pass"])){
+    if (($_POST["user"] != "") && ($_POST["pass"]) != ""){
         $un = $_POST["user"];
         $ps = $_POST["pass"];
 
