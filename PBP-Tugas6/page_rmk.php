@@ -15,14 +15,19 @@
         [
             "kode" => "A004",
             "matkul" => "Manajemen Database"
+        ],
+        [
+            "kode" => "A005",
+            "matkul" => "Keamanan Data"
         ]
     ];
 
     session_start();
     if (!isset($_SESSION["sessuser"])){
         header("Location: index.php");
+    } else {
+        $nama = $_SESSION["sessuser"];
     }
-    $nama = $_SESSION["sessuser"];
 ?>
 
 <!DOCTYPE html>
@@ -35,11 +40,11 @@
     <div class="container">
         <div class="con">
             <div>
-                <h2>Selamat datang, <?= $nama ?></h2><br>
-                <a class="btn" href="logout.php">Logout</a>
+                <h2>Selamat datang, <?= $nama ?>.</h2>
+                <a class="btn" href="sess_logout.php">Logout</a>
             </div>
             <div class="tabel">
-                <form action="matkul.php" method="post">
+                <form action="sess_matkul.php" method="post">
                     <table class="styled">
                         <tr class="h-color">
                             <td>Kode</td>
@@ -54,7 +59,7 @@
                         </tr>
                         <?php } ?>
                     </table>
-                    <input type="submit" class="btn" value="Submit">
+                    <input type="submit" class="btn" value="Next" name="submit">
                 </form>
             </div>
         </div>

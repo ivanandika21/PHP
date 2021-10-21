@@ -1,0 +1,17 @@
+table,
+th,
+td {
+    border: 1px solid #dbdbdb;
+}
+.styled {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    width: 40vw;
+}
+.h-color td {
+    background-color: rgba(53, 157, 243, 0.4);
+    font-weight: bolder;
+}
+.styled td {
+    padding: 10px 10px;
+}

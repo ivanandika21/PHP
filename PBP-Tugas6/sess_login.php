@@ -27,11 +27,11 @@
             }
         }
         if ($returnvalue == "berhasil"){
-            header("Location: rmk.php");
+            header("Location: page_rmk.php");
         } else {
-            header("Location: index.php");
+            header("Location: page_index.php");
         }
     } else {
-        header("Location: index.php");
+        header("Location: page_index.php");
     }
 ?>

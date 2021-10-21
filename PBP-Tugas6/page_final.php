@@ -1,9 +1,7 @@
 <?php
     session_start();
-    if (isset($_SESSION["pilih"])){
-        $nama = $_SESSION["sessuser"];
-        $matkul = $_SESSION["pilih"];
-    }
+    $nama = $_SESSION["sessuser"];
+    $matkul = $_SESSION["sesspilih"];
 
     $matakuliah = [
         [
@@ -21,6 +19,10 @@
         [
             "kode" => "A004",
             "matkul" => "Manajemen Database"
+        ],
+        [
+            "kode" => "A005",
+            "matkul" => "Keamanan Data"
         ]
     ];
 ?>
@@ -36,10 +38,10 @@
         <div class="con">
             <div>
                 <h2>Selamat datang, <?= $nama ?></h2><br>
-                <a class="btn" href="logout.php">Logout</a>
+                <a class="btn" href="sess_logout.php">Logout</a>
             </div>
             <div class="tabel">
-                <form action="matkul.php" method="post">
+                <form action="sess_unset.php" method="post">
                     <table class="styled">
                         <tr class="h-color">
                             <td>Kode</td>
@@ -58,7 +60,7 @@
                             }
                         ?>
                     </table>
-                    <input type="submit" class="btn" value="Submit">
+                    <input type="submit" class="btn" value="Back" name="submit">
                 </form>
             </div>
         </div>
