@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+*,
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+.child-con {
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    background-color: white;
+}
+.con {
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    width: 40vw;
+    height: 60vh;
+    margin-top: 5rem;
+    background-color: white;
+    padding: 3rem;
+}
+a {
+    text-decoration: none;
+}
+.field {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid rgb(53, 157, 243);
+    margin: 5px 0;
+    width: 100%;
+}
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+.btn {
+    background-color: rgb(53, 157, 243);
+    font-weight: bolder;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin: 10px 0;
+    width: 90px;
+}
+.kiri {
+    border-radius: 10px 0 0 10px;
+    background-image: url("img.jpg");
+    background-size: cover;
+    height: 400px;
+    width: 200px;
+}
+.kanan {
+    width: 20vw;
+    padding: 0 2rem;
+    margin: auto 0;
+}
+h2 {
+    margin: 10px 0;
+}
+span {
+    display: block;
+    overflow: hidden;
+    padding-right: 10px;
+}
+.tabel {
+    margin-top: 2rem;
+}
+table {
+    border-collapse: collapse;
+    width: 40vw;
+}
+table,
+th,
+td {
+    border: 1px solid #dbdbdb;
+}
+.h-color td {
+    font-weight: bolder;
+    background-color: rgba(53, 157, 243, 0.4);
+}
+
+.styled td {
+    padding: 10px 10px;
+}
