@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login Form</title>
+    <title>Tugas6_672019171</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>

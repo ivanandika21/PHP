@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    $nama = $_SESSION["sessuser"];
+    $matkul = $_SESSION["sesspilih"];
+
     $matakuliah = [
         [
             "kode" => "A001",
@@ -21,13 +25,6 @@
             "matkul" => "Keamanan Data"
         ]
     ];
-
-    session_start();
-    if (!isset($_SESSION["sessuser"])){
-        header("Location: index.php");
-    } else {
-        $nama = $_SESSION["sessuser"];
-    }
 ?>
 
 <!DOCTYPE html>
@@ -39,30 +36,35 @@
 <body>
     <div class="container">
         <div class="con">
-            <div class="flex">
+        <div class="flex">
                 <div>
                     <h2>Selamat datang, <?= $nama ?>.</h2>
-                    <p>Silakan pilih mata kuliah:</p>
+                    <p>Mata kuliah yang dipilih:</p>
                 </div>
                 <div><br><br><a class="btn not" href="sess_logout.php">Logout</a></div>
             </div>
             <div class="tabel">
-                <form action="sess_matkul.php" method="post">
+                <form action="page_final.php" method="post">
                     <table class="styled">
                         <tr class="h-color">
                             <td>Kode</td>
                             <td>Mata Kuliah</td>
-                            <td>Pilih</td>
                         </tr>
-                        <?php for ($i = 1; $i <= count($matakuliah); $i++) {?>
-                        <tr>
-                            <td><?= $matakuliah[$i-1]["kode"]; ?></td>
-                            <td><?= $matakuliah[$i-1]["matkul"]; ?></td>
-                            <td><input type="checkbox" name="pilih[]" value="A00<?= $i; ?>"></td>
-                        </tr>
-                        <?php } ?>
+                        <?php 
+                            for ($j = 0; $j < count($matkul); $j++){
+                                for ($i = 0; $i < count($matakuliah); $i++){
+                                    if ($matkul[$j] == $matakuliah[$i]["kode"]){
+                                        echo "<tr>";
+                                            echo "<td>".$matakuliah[$i]["kode"]."</td>";
+                                            echo "<td>".$matakuliah[$i]["matkul"]."</td>";
+                                        echo "</tr>";
+                                    }
+                                }
+                            }
+                        ?>
                     </table>
-                    <input type="submit" class="btn" value="Next">
+                    <a class="btn not" href="sess_unset.php">Back and clear</a>
+                    <input type="submit" class="btn" value="Next" name="submit">
                 </form>
             </div>
         </div>

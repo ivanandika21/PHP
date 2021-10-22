@@ -5,6 +5,6 @@
     } else {
         $matkul = $_POST["pilih"];
         $_SESSION["sesspilih"] = $matkul;
-        header("Location: page_final.php");
+        header("Location: page_check.php");
     }
 ?>
