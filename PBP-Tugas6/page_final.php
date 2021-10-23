@@ -1,30 +1,8 @@
-<?php
+<?php    
     session_start();
     $nama = $_SESSION["sessuser"];
-    $matkul = $_SESSION["sesspilih"];
-
-    $matakuliah = [
-        [
-            "kode" => "A001",
-            "matkul" => "Pemrograman Web"
-        ],
-        [
-            "kode" => "A002",
-            "matkul" => "Pemrograman Service"
-        ],
-        [
-            "kode" => "A003",
-            "matkul" => "Desain Interface"
-        ],
-        [
-            "kode" => "A004",
-            "matkul" => "Manajemen Database"
-        ],
-        [
-            "kode" => "A005",
-            "matkul" => "Keamanan Data"
-        ]
-    ];
+    $arrPilihan = $_SESSION["sesspilih"];
+    $arrMatkul = $_SESSION["sessarrMatkul"];
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +19,10 @@
                     <h2>Selamat datang, <?= $nama ?>.</h2>
                     <p>Mata kuliah yang dipilih:</p>
                 </div>
-                <div><br><br><a class="btn not" href="sess_logout.php">Logout</a></div>
+                <div>
+                    <br><br>
+                    <a class="btn not" href="sess_logout.php">Logout</a>
+                </div>
             </div>
             <div class="tabel">
                 <form action="sess_logout.php" method="post">
@@ -51,19 +32,19 @@
                             <td>Mata Kuliah</td>
                         </tr>
                         <?php 
-                            for ($j = 0; $j < count($matkul); $j++){
-                                for ($i = 0; $i < count($matakuliah); $i++){
-                                    if ($matkul[$j] == $matakuliah[$i]["kode"]){
-                                        echo "<tr>";
-                                            echo "<td>".$matakuliah[$i]["kode"]."</td>";
-                                            echo "<td>".$matakuliah[$i]["matkul"]."</td>";
-                                        echo "</tr>";
-                                    }
-                                }
+                          for ($j = 0; $j < count($arrPilihan); $j++){
+                            for ($i = 0; $i < count($arrMatkul); $i++){
+                       if ($arrPilihan[$j] == $arrMatkul[$i]["kode"]){
+                           echo "<tr>";
+                           echo "<td>".$arrMatkul[$i]["kode"]."</td>";
+                           echo "<td>".$arrMatkul[$i]["matkul"]."</td>";
+                           echo "</tr>";
+                        }
                             }
+                          }
                         ?>
                     </table>
-                    <input type="submit" class="btn" value="Done" name="submit">
+                    <input type="submit" class="btn" value="Done">
                 </form>
             </div>
         </div>
