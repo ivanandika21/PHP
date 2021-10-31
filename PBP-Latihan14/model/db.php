@@ -24,5 +24,14 @@
             $this->datasiswa = $data;
             return $this->datasiswa;
         }
+
+        public function input_data($a, $b){
+            $query = $this->db->prepare("insert into tbsiswa(nis,nama) values(:ns,:nm)");
+            $query->bindParam(":ns", $a);
+            $query->bindParam(":nm", $b);
+
+            if($query->execute()) return true;
+            else return false;
+        }
     }
 ?>
